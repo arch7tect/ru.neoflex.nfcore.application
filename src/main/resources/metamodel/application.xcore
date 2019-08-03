@@ -1,0 +1,14 @@
+@GenModel(
+    bundleManifest="false",
+    modelDirectory="ru.neoflex.nfcore.base/src/java/java-gen",
+    complianceLevel="7.0",
+    rootExtendsClass="org.eclipse.emf.ecore.impl.EObjectImpl",
+    rootExtendsInterface="org.eclipse.emf.ecore.EObject"
+)
+package ru.neoflex.nfcore.application
+import ru.neoflex.nfcore.base.auth.User
+
+class ApplicationUser extends User {
+    String address
+}
+
