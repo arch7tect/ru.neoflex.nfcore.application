@@ -1,6 +1,6 @@
 @GenModel(
     bundleManifest="false",
-    modelDirectory="ru.neoflex.nfcore.base/src/java/java-gen",
+    modelDirectory="ru.neoflex.nfcore.application/src/java/java-gen",
     complianceLevel="7.0",
     rootExtendsClass="org.eclipse.emf.ecore.impl.EObjectImpl",
     rootExtendsInterface="org.eclipse.emf.ecore.EObject"
