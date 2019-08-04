@@ -3,9 +3,7 @@ package ru.neoflex.nfcore.application.components;
 import org.eclipse.emf.ecore.EPackage;
 import org.springframework.stereotype.Component;
 import ru.neoflex.nfcore.application.ApplicationPackage;
-import ru.neoflex.nfcore.base.auth.AuthPackage;
 import ru.neoflex.nfcore.base.components.IPackageRegistry;
-import ru.neoflex.nfcore.base.types.TypesPackage;
 
 import java.util.ArrayList;
 import java.util.List;

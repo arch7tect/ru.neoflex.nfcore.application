@@ -7,8 +7,13 @@
 )
 package ru.neoflex.nfcore.application
 import ru.neoflex.nfcore.base.auth.User
+import ru.neoflex.nfcore.base.types.Name
 
 class ApplicationUser extends User {
     String address
+}
+
+class Application {
+    Name name
 }
 
