@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <start-class>ru.neoflex.nfcore.base.BaseApplication</start-class>
+        <!--<start-class>ru.neoflex.nfcore.base.BaseApplication</start-class>-->
         <emf-version>2.15.0</emf-version>
         <xtext-version>2.18.0</xtext-version>
         <ecore-xtext-version>1.4.0</ecore-xtext-version>
@@ -40,8 +40,7 @@
             <groupId>ru.neoflex.nfcore</groupId>
             <artifactId>base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-
+        </dependency>
     </dependencies>
 
     <build>
