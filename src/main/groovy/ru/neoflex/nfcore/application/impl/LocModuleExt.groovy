@@ -14,9 +14,9 @@ class LocModuleExt extends LocModuleImpl {
 
     static def captionFromCamel(String s) {
         if (!s.charAt(0).upperCase) {
-            s = s.charAt(0).toUpperCase() + s.substring(1)
+            s = s.charAt(0).toUpperCase().toString() + s.substring(1)
         }
-        return s.split("(?<=\\p{javaLowerCase})(?=\\p{javaUpperCase})").concat(" ");
+        return s.split("(?<=\\p{javaLowerCase})(?=\\p{javaUpperCase})").join(" ");
     }
 
     static def addCaptions(LocNS ns, ResourceSet langs, String name) {
@@ -64,17 +64,17 @@ class LocModuleExt extends LocModuleImpl {
             if (packageNS == null) {
                 packageNS = ApplicationFactory.eINSTANCE.createLocNS()
                 packageNS.name = ePackage.nsPrefix
-                addCaptions(packageNS, langsRS, ePackage.nsPrefix)
                 locModule.children.add(packageNS)
             }
+            addCaptions(packageNS, langsRS, ePackage.nsPrefix)
             ePackage.EClassifiers.findAll {c->c instanceof EClass}.each {EClass eClass->
                 def classNS = packageNS.children.find {it.name == eClass.name}
                 if (classNS == null) {
                     classNS = ApplicationFactory.eINSTANCE.createLocNS()
                     classNS.name = eClass.name
-                    addCaptions(classNS, langsRS, eClass.name)
                     packageNS.children.add(classNS)
                 }
+                addCaptions(classNS, langsRS, eClass.name)
                 def structuralFeaturesNS = classNS.children.find {it.name == "structuralFeatures"}
                 if (structuralFeaturesNS == null) {
                     structuralFeaturesNS = ApplicationFactory.eINSTANCE.createLocNS()
@@ -86,9 +86,9 @@ class LocModuleExt extends LocModuleImpl {
                     if (sfNS == null) {
                         sfNS = ApplicationFactory.eINSTANCE.createLocNS()
                         sfNS.name = eStructuralFeature.name
-                        addCaptions(sfNS, langsRS, eStructuralFeature.name)
                         structuralFeaturesNS.children.add(sfNS)
                     }
+                    addCaptions(sfNS, langsRS, eStructuralFeature.name)
                 }
             }
         }
