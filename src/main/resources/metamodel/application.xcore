@@ -52,7 +52,7 @@ abstract class LocBase {
 }
 
 abstract class LocContainer extends LocBase {
-	refers LocModule[] inherits
+	refers LocContainer[] inherits
 	contains LocNS[] children opposite parent
 	contains LocCaption[] captions
 }

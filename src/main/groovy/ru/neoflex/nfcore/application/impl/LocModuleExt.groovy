@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import ru.neoflex.nfcore.application.ApplicationFactory
 import ru.neoflex.nfcore.application.ApplicationPackage
 import ru.neoflex.nfcore.application.Lang
+import ru.neoflex.nfcore.application.LocContainer
 import ru.neoflex.nfcore.application.LocModule
 import ru.neoflex.nfcore.application.LocNS
 import ru.neoflex.nfcore.base.services.Context
@@ -27,6 +28,7 @@ class LocModuleExt extends LocModuleImpl {
                 caption = ApplicationFactory.eINSTANCE.createLocCaption()
                 caption.lang = lang
                 caption.caption = nameCaption
+                ns.captions.add(caption)
             }
         }}
     }
@@ -54,6 +56,7 @@ class LocModuleExt extends LocModuleImpl {
     }
 
     static def generatePackagesModule() {
+        Map<EClass, LocContainer> eClassesMap = [:]
         createLangIfNotExists("en")
         createLangIfNotExists("ru")
         def langsRS = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LANG)
@@ -74,6 +77,7 @@ class LocModuleExt extends LocModuleImpl {
                     classNS.name = eClass.name
                     packageNS.children.add(classNS)
                 }
+                eClassesMap[eClass] = classNS
                 addCaptions(classNS, langsRS, eClass.name)
                 def structuralFeaturesNS = classNS.children.find {it.name == "structuralFeatures"}
                 if (structuralFeaturesNS == null) {
@@ -92,14 +96,44 @@ class LocModuleExt extends LocModuleImpl {
                 }
             }
         }
+        eClassesMap.keySet().each {eClass->
+            def container = eClassesMap.get(eClass)
+            def structuralFeatures = container.children.find {it.name == "structuralFeatures"}
+            eClass.getESuperTypes().each {eSuperClass->
+                def superContainer = eClassesMap.get(eSuperClass)
+                def superStructuralFeatures = superContainer.children.find {it.name == "structuralFeatures"}
+                structuralFeatures.inherits.add(superStructuralFeatures)
+            }
+        }
         Context.current.store.updateEObject(locModule)
         return locModule
+    }
+
+    static def generateLocales() {
+        def locModulesResources = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LOC_MODULE)
+                .execute().resourceSet.resources.findAll {true}
+        def langsResources = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LANG)
+                .execute().resourceSet.resources.findAll {true}
+        langsResources.each {lgrs->
+            Lang lang = lgrs.contents[0]
+            locModulesResources.each {lmrs->
+                LocModule locModule = lmrs.contents[0]
+                String json = Context.current.epsilon.generate("org/eclipse/epsilon/GenPackagesLocales.egl", [lang: lang.name], locModule)
+                File out = Context.current.workspace.getFile("public/locales/${lang.name}/${locModule.name}.json")
+                out.parentFile.mkdirs()
+                out.write(json)
+            }
+        }
     }
 
     {
         LocModule.metaClass.static.generatePackagesModule = {->
             LocModuleExt.generatePackagesModule()
         }
+        LocModule.metaClass.static.generateLocales = {->
+            LocModuleExt.generateLocales()
+        }
         LocModuleExt.generatePackagesModule()
+        //LocModuleExt.generateLocales()
     }
 }

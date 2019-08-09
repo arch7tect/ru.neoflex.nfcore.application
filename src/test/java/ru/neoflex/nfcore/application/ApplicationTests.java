@@ -22,6 +22,8 @@ public class ApplicationTests {
     public void generateLocModule() throws Exception {
         LocModule locModule = (LocModule) context.getGroovy().eval(ApplicationPackage.Literals.LOC_MODULE, "generatePackagesModule", Lists.emptyList());
         Assert.assertEquals(3, locModule.getChildren().size());
+        context.getGroovy().eval(ApplicationPackage.Literals.LOC_MODULE, "generateLocales", Lists.emptyList());
+        Assert.assertTrue(context.getWorkspace().getFile("public/locales/en/packages.json").exists());
     }
 
 }
