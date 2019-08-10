@@ -134,6 +134,6 @@ class LocModuleExt extends LocModuleImpl {
             LocModuleExt.generateLocales()
         }
         LocModuleExt.generatePackagesModule()
-        //LocModuleExt.generateLocales()
+        LocModuleExt.generateLocales()
     }
 }
