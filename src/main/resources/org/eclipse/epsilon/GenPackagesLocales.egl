@@ -10,8 +10,7 @@ var caption = self.captions.select(c|c.lang.name == lang).first();
 var children = self.getAllChildren();
 %]
 {
-[%
-if (caption.isDefined()) {%]
+[%if (caption.isDefined()) {%]
   "caption": "[%=caption.caption%]"[%if (children.size() > 0) {%],[%}%]
   
 [%}%]
