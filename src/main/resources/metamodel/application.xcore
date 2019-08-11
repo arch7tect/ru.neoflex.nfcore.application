@@ -2,7 +2,7 @@
     bundleManifest="false",
     modelDirectory="ru.neoflex.nfcore.application/src/java/java-gen",
     complianceLevel="7.0",
-    rootExtendsClass="org.eclipse.emf.ecore.impl.EObjectImpl",
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl",
     rootExtendsInterface="org.eclipse.emf.ecore.EObject"
 )
 package ru.neoflex.nfcore.application
@@ -13,7 +13,6 @@ abstract class Form {
 }
 
 abstract class PathContainer {
-    derived QName path get {getFullPath()}
 	op QName getFullPath()
     contains PathElement[] children opposite parent
 }
@@ -22,7 +21,7 @@ class PathElement extends PathContainer {
 	container PathContainer parent opposite children 
     String name
     op QName getFullPath() {
-    	parent.getPath() + "/" + name
+    	parent.getFullPath() + "/" + name
     }
 }
 
@@ -47,8 +46,7 @@ class Lang {
 }
 
 abstract class LocBase {
-    derived QName path get {getFullPath()}
-	op QName getFullPath()
+    op QName getFullPath()
 }
 
 abstract class LocContainer extends LocBase {
@@ -61,7 +59,7 @@ class LocNS extends LocContainer {
 	String[1] name
 	container LocContainer parent opposite children
     op QName getFullPath() {
-    	if (parent === null) {""} else {parent.getPath() + "."} + name
+    	if (parent === null) {""} else {parent.getFullPath() + "."} + name
     }
 }
 
