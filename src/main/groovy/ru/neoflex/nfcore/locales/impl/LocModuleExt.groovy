@@ -1,17 +1,14 @@
-package ru.neoflex.nfcore.application.impl
+package ru.neoflex.nfcore.locales.impl
 
 import org.apache.commons.lang3.StringUtils
 import org.eclipse.emf.ecore.EClass
-import org.eclipse.emf.ecore.impl.EAnnotationImpl
-import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl
 import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.emf.ecore.util.ExtendedMetaData
-import ru.neoflex.nfcore.application.ApplicationFactory
-import ru.neoflex.nfcore.application.ApplicationPackage
-import ru.neoflex.nfcore.application.Lang
-import ru.neoflex.nfcore.application.LocContainer
-import ru.neoflex.nfcore.application.LocModule
-import ru.neoflex.nfcore.application.LocNS
+import ru.neoflex.nfcore.locales.LocalesFactory
+import ru.neoflex.nfcore.locales.LocalesPackage
+import ru.neoflex.nfcore.locales.Lang
+import ru.neoflex.nfcore.locales.LocContainer
+import ru.neoflex.nfcore.locales.LocModule
+import ru.neoflex.nfcore.locales.LocNS
 import ru.neoflex.nfcore.base.services.Context
 import ru.neoflex.nfcore.base.util.DocFinder
 
@@ -24,7 +21,7 @@ class LocModuleExt extends LocModuleImpl {
     public static final String E_CLASSES = "eClasses"
 
     static def captionFromCamel(String s) {
-        return StringUtils.capitalize(s).split("(?<=\\p{javaLowerCase})(?=\\p{javaUpperCase})").join(" ");
+        return StringUtils.capitalize(s).split("(?<=\\p{javaLowerCase})(?=\\p{javaUpperCase})").join(" ")
     }
 
     static def addCaptions(LocNS ns, ResourceSet langs, String name) {
@@ -32,7 +29,7 @@ class LocModuleExt extends LocModuleImpl {
         langs.resources.each {it.contents.each {Lang lang->
             def caption = ns.captions.find {it.lang.name == lang.name}
             if (caption == null) {
-                caption = ApplicationFactory.eINSTANCE.createLocCaption()
+                caption = LocalesFactory.eINSTANCE.createStringResource()
                 caption.lang = lang
                 caption.caption = nameCaption
                 ns.captions.add(caption)
@@ -41,10 +38,10 @@ class LocModuleExt extends LocModuleImpl {
     }
 
     static def createLocModuleIfNotExists(String name) {
-        def rs = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LOC_MODULE, [name: name])
+        def rs = DocFinder.create(Context.current.store, LocalesPackage.Literals.LOC_MODULE, [name: name])
                 .execute().resourceSet
         if (rs.resources.empty) {
-            def eObject = ApplicationFactory.eINSTANCE.createLocModule()
+            def eObject = LocalesFactory.eINSTANCE.createLocModule()
             eObject.name = name
             rs.resources.add(Context.current.store.createEObject(eObject))
         }
@@ -53,13 +50,13 @@ class LocModuleExt extends LocModuleImpl {
 
     static def generatePackagesModule() {
         Map<EClass, LocContainer> eClassesMap = [:]
-        def langsRS = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LANG)
+        def langsRS = DocFinder.create(Context.current.store, LocalesPackage.Literals.LANG)
                 .execute().resourceSet
         def locModule = createLocModuleIfNotExists("packages")
         Context.current.registry.EPackages.each {ePackage->
             def ePackageNS = locModule.children.find {it.name == ePackage.nsPrefix}
             if (ePackageNS == null) {
-                ePackageNS = ApplicationFactory.eINSTANCE.createLocNS()
+                ePackageNS = LocalesFactory.eINSTANCE.createLocNS()
                 ePackageNS.name = ePackage.nsPrefix
                 locModule.children.add(ePackageNS)
             }
@@ -67,14 +64,14 @@ class LocModuleExt extends LocModuleImpl {
             if (ePackage.EClassifiers.findAll {c->c instanceof EClass}.size() > 0) {
                 def eClassesNS = ePackageNS.children.find {it.name == E_CLASSES }
                 if (eClassesNS == null) {
-                    eClassesNS = ApplicationFactory.eINSTANCE.createLocNS()
+                    eClassesNS = LocalesFactory.eINSTANCE.createLocNS()
                     eClassesNS.name = E_CLASSES
                     ePackageNS.children.add(eClassesNS)
                 }
                 ePackage.EClassifiers.findAll {c->c instanceof EClass}.each {EClass eClass->
                     def eClassNS = eClassesNS.children.find {it.name == eClass.name}
                     if (eClassNS == null) {
-                        eClassNS = ApplicationFactory.eINSTANCE.createLocNS()
+                        eClassNS = LocalesFactory.eINSTANCE.createLocNS()
                         eClassNS.name = eClass.name
                         eClassesNS.children.add(eClassNS)
                     }
@@ -83,14 +80,14 @@ class LocModuleExt extends LocModuleImpl {
                     if (eClass.EAllStructuralFeatures.size() > 0) {
                         def eStructuralFeaturesNS = eClassNS.children.find {it.name == E_STRUCTURAL_FEATURES }
                         if (eStructuralFeaturesNS == null) {
-                            eStructuralFeaturesNS = ApplicationFactory.eINSTANCE.createLocNS()
+                            eStructuralFeaturesNS = LocalesFactory.eINSTANCE.createLocNS()
                             eStructuralFeaturesNS.name = E_STRUCTURAL_FEATURES
                             eClassNS.children.add(eStructuralFeaturesNS)
                         }
                         eClass.getEStructuralFeatures().each {eStructuralFeature->
                             def sfNS = eStructuralFeaturesNS.children.find {it.name == eStructuralFeature.name}
                             if (sfNS == null) {
-                                sfNS = ApplicationFactory.eINSTANCE.createLocNS()
+                                sfNS = LocalesFactory.eINSTANCE.createLocNS()
                                 sfNS.name = eStructuralFeature.name
                                 eStructuralFeaturesNS.children.add(sfNS)
                             }
@@ -100,14 +97,14 @@ class LocModuleExt extends LocModuleImpl {
                     if (eClass.EAllOperations.size() > 0) {
                         def eOperationsNS = eClassNS.children.find {it.name == E_OPERATIONS }
                         if (eOperationsNS == null) {
-                            eOperationsNS = ApplicationFactory.eINSTANCE.createLocNS()
+                            eOperationsNS = LocalesFactory.eINSTANCE.createLocNS()
                             eOperationsNS.name = E_OPERATIONS
                             eClassNS.children.add(eOperationsNS)
                         }
                         eClass.getEOperations().each {eOperation->
                             def eOperationNS = eOperationsNS.children.find {it.name == eOperation.name}
                             if (eOperationNS == null) {
-                                eOperationNS = ApplicationFactory.eINSTANCE.createLocNS()
+                                eOperationNS = LocalesFactory.eINSTANCE.createLocNS()
                                 eOperationNS.name = eOperation.name
                                 eOperationsNS.children.add(eOperationNS)
                             }
@@ -115,14 +112,14 @@ class LocModuleExt extends LocModuleImpl {
                             if (eOperation.EParameters.size() > 0) {
                                 def eParametersNS = eOperationNS.children.find {it.name == E_PARAMETERS }
                                 if (eParametersNS == null) {
-                                    eParametersNS = ApplicationFactory.eINSTANCE.createLocNS()
+                                    eParametersNS = LocalesFactory.eINSTANCE.createLocNS()
                                     eParametersNS.name = E_PARAMETERS
                                     eOperationNS.children.add(eParametersNS)
                                 }
                                 eOperation.EParameters.each {eParameter->
                                     def eParameterNS = eParametersNS.children.find {it.name == eParameter.name}
                                     if (eParameterNS == null) {
-                                        eParameterNS = ApplicationFactory.eINSTANCE.createLocNS()
+                                        eParameterNS = LocalesFactory.eINSTANCE.createLocNS()
                                         eParameterNS.name = eParameter.name
                                         eParametersNS.children.add(eParameterNS)
                                     }
@@ -159,14 +156,14 @@ class LocModuleExt extends LocModuleImpl {
     }
 
     static def generateLocales() {
-        def locModulesResources = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LOC_MODULE)
+        def locModulesResources = DocFinder.create(Context.current.store, LocalesPackage.Literals.LOC_MODULE)
                 .execute().resourceSet.resources.findAll {true}
-        def langsResources = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LANG)
+        def langsResources = DocFinder.create(Context.current.store, LocalesPackage.Literals.LANG)
                 .execute().resourceSet.resources.findAll {true}
         langsResources.each {lgrs->
-            Lang lang = lgrs.contents[0]
+            Lang lang = lgrs.contents[0] as Lang
             locModulesResources.each {lmrs->
-                LocModule locModule = lmrs.contents[0]
+                LocModule locModule = lmrs.contents[0] as LocModule
                 String json = Context.current.epsilon.generate("org/eclipse/epsilon/LocModule2json.egl", [lang: lang.name], locModule)
                 File out = Context.current.workspace.getFile("public/locales/${lang.name}/${locModule.name}.json")
                 out.parentFile.mkdirs()
@@ -177,12 +174,12 @@ class LocModuleExt extends LocModuleImpl {
 
     {
         LocModule.metaClass.static.generatePackagesModule = {->
-            LocModuleExt.generatePackagesModule()
+            generatePackagesModule()
         }
         LocModule.metaClass.static.generateLocales = {->
-            LocModuleExt.generateLocales()
+            generateLocales()
         }
-        LocModuleExt.generatePackagesModule()
-        LocModuleExt.generateLocales()
+        generatePackagesModule()
+        generateLocales()
     }
 }

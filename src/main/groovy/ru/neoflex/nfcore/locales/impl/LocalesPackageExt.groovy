@@ -1,17 +1,17 @@
-package ru.neoflex.nfcore.application.impl
+package ru.neoflex.nfcore.locales.impl
 
-import ru.neoflex.nfcore.application.ApplicationFactory
-import ru.neoflex.nfcore.application.ApplicationPackage
-import ru.neoflex.nfcore.application.Lang
+import ru.neoflex.nfcore.locales.LocalesFactory
+import ru.neoflex.nfcore.locales.LocalesPackage
+import ru.neoflex.nfcore.locales.Lang
 import ru.neoflex.nfcore.base.services.Context
 import ru.neoflex.nfcore.base.util.DocFinder
 
-class ApplicationPackageExt {
+class LocalesPackageExt {
     static def createLangIfNotExists(String lang) {
-        def rs = DocFinder.create(Context.current.store, ApplicationPackage.Literals.LANG, [name: lang])
+        def rs = DocFinder.create(Context.current.store, LocalesPackage.Literals.LANG, [name: lang])
                 .execute().resourceSet
         if (rs.resources.empty) {
-            def eObject = ApplicationFactory.eINSTANCE.createLang()
+            def eObject = LocalesFactory.eINSTANCE.createLang()
             eObject.name = lang
             rs.resources.add(Context.current.store.createEObject(eObject))
         }
@@ -25,5 +25,5 @@ class ApplicationPackageExt {
         Lang.createLangIfNotExists("en")
         Lang.createLangIfNotExists("ru")
     }
-    ApplicationPackageExt() {}
+    LocalesPackageExt() {}
 }

@@ -41,34 +41,3 @@ class PathForm extends PathElement {
 	refers Form form
 }
 
-class Lang {
-	QName name
-}
-
-abstract class LocBase {
-    op QName getFullPath()
-}
-
-abstract class LocContainer extends LocBase {
-	refers LocContainer[] inherits
-	contains LocNS[] children opposite parent
-	contains LocCaption[] captions
-}
-
-class LocNS extends LocContainer {
-	String[1] name
-	container LocContainer parent opposite children
-    op QName getFullPath() {
-    	if (parent === null) {""} else {parent.getFullPath() + "."} + name
-    }
-}
-
-class LocModule extends LocContainer {
-	QName name
-	op QName getFullPath() {name}
-}
-
-class LocCaption {
-	refers Lang lang
-	String caption
-}
