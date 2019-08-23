@@ -6,7 +6,7 @@ import ru.neoflex.nfcore.locales.Lang
 import ru.neoflex.nfcore.base.services.Context
 import ru.neoflex.nfcore.base.util.DocFinder
 
-class LocalesPackageExt {
+class LocalesPackageInit {
     static def createLangIfNotExists(String lang) {
         def rs = DocFinder.create(Context.current.store, LocalesPackage.Literals.LANG, [name: lang])
                 .execute().resourceSet
@@ -25,5 +25,6 @@ class LocalesPackageExt {
         Lang.createLangIfNotExists("en")
         Lang.createLangIfNotExists("ru")
     }
-    LocalesPackageExt() {}
+
+    LocalesPackageInit() {}
 }

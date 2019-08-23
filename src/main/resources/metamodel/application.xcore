@@ -7,37 +7,98 @@
 )
 package ru.neoflex.nfcore.application
 import ru.neoflex.nfcore.base.types.QName
+import ru.neoflex.nfcore.base.types.Caption
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EStructuralFeature
 
-abstract class Form {
-	QName name
-}
-
-abstract class PathContainer {
-	op QName getFullPath()
-    contains PathElement[] children opposite parent
-}
-
-class PathElement extends PathContainer {	
-	container PathContainer parent opposite children 
-    String name
-    op QName getFullPath() {
-    	parent.getFullPath() + "/" + name
-    }
-}
-
-abstract class PathRoot extends PathContainer {
+abstract class Component {
     QName name
-    op QName getFullPath() {name}
 }
 
-class EmptyRoot extends PathContainer {
-    op QName getFullPath() {""}
+class StaticComponent extends Component {	
 }
 
-class Application extends PathRoot {
+abstract class ViewElement {
+	String code
+	container ViewContainer parent opposite children
 }
 
-class PathForm extends PathElement {	
-	refers Form form
+abstract class ViewContainer extends ViewElement {
+	contains ViewElement[] children opposite parent
+}
+
+abstract class Icon extends ViewElement {	
+}
+
+class FAIcon extends Icon {
+	String iconCode
+}
+
+class ComponentElement extends ViewElement {
+	refers Component component
+}
+
+class Tree extends ViewElement {
+	contains TreeNode rootNode
+}
+
+abstract class TreeNode {
+	String name
+	contains TreeNode[] children
+}
+
+class CatalogNode extends TreeNode {	
+}
+
+class EObjectNode extends TreeNode {
+	refers EObject eObject
+	refers EObjectView eObjectView
+}
+
+abstract class EClassView extends ViewContainer {
+	refers EClass eClass
+}
+
+abstract class DecoratedClassView extends EClassView {
+	QName name
+	contains Tools tools
+	op Tools generateTools() {tools}
+	contains Tree referenceTree	
+	op Tree generateReferenceTree() {referenceTree}
+}
+
+class EObjectView extends DecoratedClassView {
+}
+
+class Application extends DecoratedClassView {
+}
+
+class Tools extends ViewContainer {
+}
+
+class Tool extends ViewContainer {
+	String name
+	Caption caption
+	contains Icon icon
+}
+
+class Typography extends ViewElement {
+}
+
+class Row extends ViewContainer {
+}
+
+class Column extends ViewContainer {
+}
+
+class Tabs extends ViewContainer {
+}
+
+class ClassForm extends EClassView {
+}
+
+class ClassFeature extends ViewContainer {
+	refers EStructuralFeature eStructuralFeature
 }
 
