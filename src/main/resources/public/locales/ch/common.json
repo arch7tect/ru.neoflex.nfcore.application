@@ -1,0 +1,15 @@
+{
+        "login": "登錄",
+        "logout": "登出",
+        "username": "用戶名",
+        "password": "密碼",
+        "developer": "開發人員",
+        "app": "應用",
+        "language": "語言",
+        "metadata": "元數據",
+        "name": "名稱",
+        "data": "數據",
+        "regularExpression": "正則表達式",
+        "query": "詢問",
+        "run": "跑"
+}
