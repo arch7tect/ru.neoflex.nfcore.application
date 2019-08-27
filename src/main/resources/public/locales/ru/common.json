@@ -1,0 +1,17 @@
+{
+        "login": "Войти_App",
+        "logout": "Выход_App",
+        "username": "Имя пользователя_App",
+        "password": "Пароль_App",
+        "developer": "Разработчик_App",
+        "app": "Приложение_App",
+        "metadata": "Метаданные_App",
+        "name": "Наименование_App",
+        "type": "Type_App",
+        "uri": "URI_App",
+        "data": "Данные_App",
+        "dataSearch": "Поиск по классу_App",
+        "jsonSearch": "Поиск по Json объекту_App",
+        "regularExpression": "Регулярное выражение_App",
+        "query": "Запрос_App"
+}
