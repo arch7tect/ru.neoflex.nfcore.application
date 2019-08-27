@@ -16,7 +16,15 @@ abstract class Component {
     QName name
 }
 
+class NamedView extends Component {	
+	contains ViewElement view
+}
+
 class StaticComponent extends Component {	
+}
+
+class DynamicComponent extends Component {
+	String path	
 }
 
 abstract class ViewElement {
