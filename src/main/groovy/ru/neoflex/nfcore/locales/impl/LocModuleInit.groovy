@@ -12,7 +12,7 @@ import ru.neoflex.nfcore.locales.LocNS
 import ru.neoflex.nfcore.base.services.Context
 import ru.neoflex.nfcore.base.util.DocFinder
 
-class LocModuleExt extends LocModuleImpl {
+class LocModuleInit extends LocModuleImpl {
 
 
     public static final String E_STRUCTURAL_FEATURES = "eStructuralFeatures"
