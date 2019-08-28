@@ -4,12 +4,11 @@
         "username": "Имя пользователя_App",
         "password": "Пароль_App",
         "developer": "Разработчик_App",
-        "app": "Приложение_App",
         "language": "Язык_App",
         "metadata": "Метаданные_App",
-        "name": "Наименование_App",
         "data": "Данные_App",
-        "regularExpression": "Регулярное выражение_App",
         "query": "Запрос_App",
-        "run": "Старт_App"
+        "run": "Старт_App",
+        "notfound": "Не найдено_App",
+        "regularexpression": "Регулярное выражение_App"
 }

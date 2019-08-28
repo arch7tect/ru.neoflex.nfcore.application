@@ -4,12 +4,11 @@
         "username": "User Name",
         "password": "Password",
         "developer": "Developer",
-        "app": "App",
         "language": "Language",
         "metadata": "Metadata",
-        "name": "Name",
         "data": "Data",
-        "regularExpression": "Regular expression",
         "query": "Query",
-        "run": "Run"
+        "run": "Run",
+        "notfound": "Not found",
+        "regularexpression": "Regular expression"
 }
