@@ -47,10 +47,6 @@ class ComponentElement extends ViewElement {
 	refers Component component
 }
 
-class Tree extends ViewElement {
-	contains TreeNode rootNode
-}
-
 abstract class TreeNode {
 	String name
 	contains TreeNode[] children
@@ -64,19 +60,16 @@ class EObjectNode extends TreeNode {
 	refers EObjectView eObjectView
 }
 
-abstract class EClassView extends ViewContainer {
-	refers EClass eClass
-}
-
-abstract class DecoratedClassView extends EClassView {
+abstract class DecoratedClassView extends ViewContainer {
 	QName name
 	contains Tools tools
 	op Tools generateTools() {tools}
-	contains Tree referenceTree	
-	op Tree generateReferenceTree() {referenceTree}
+	contains TreeNode referenceTree	
+	op TreeNode generateReferenceTree() {referenceTree}
 }
 
 class EObjectView extends DecoratedClassView {
+	refers EClass aClass
 }
 
 class Application extends DecoratedClassView {
@@ -103,10 +96,13 @@ class Column extends ViewContainer {
 class Tabs extends ViewContainer {
 }
 
-class ClassForm extends EClassView {
+class Form extends ViewContainer {
 }
 
-class ClassFeature extends ViewContainer {
+class FormItem extends ViewContainer {
+}
+
+class ClassFeature extends FormItem {
 	refers EStructuralFeature eStructuralFeature
 }
 
