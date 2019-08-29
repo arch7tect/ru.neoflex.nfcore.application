@@ -10,5 +10,10 @@
         "query": "詢問",
         "run": "跑",
         "notfound": "未找到",
-        "regularexpression": "正則表達式"
+        "regularexpression": "正則表達式",
+        "search": "搜索 ",
+        "action": "行動",
+        "edit": "編輯",
+        "delete": "刪除",
+        "addresource": "添加資源"
 }
