@@ -10,5 +10,10 @@
         "query": "Query",
         "run": "Run",
         "notfound": "Not found",
-        "regularexpression": "Regular expression"
+        "regularexpression": "Regular expression",
+        "search": "Search: ",
+        "action": "Action",
+        "edit": "Edit",
+        "delete": "Delete",
+        "addresource": "Add resource"
 }
