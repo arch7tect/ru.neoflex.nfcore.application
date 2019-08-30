@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 
+/* Components */
 abstract class Component {
     QName name
 }
@@ -23,10 +24,25 @@ class NamedView extends Component {
 class StaticComponent extends Component {	
 }
 
-class DynamicComponent extends Component {
+class RemoteComponent extends Component {
 	String path	
+	String componentName	
 }
 
+
+abstract class DecoratedComponent extends Component {
+	contains DecoratedView view
+}
+
+class Application extends DecoratedComponent {
+}
+
+class ClassComponent extends DecoratedComponent {
+	refers EClass aClass
+	int orderBy
+}
+
+/* Views */
 abstract class ViewElement {
 	String code
 	container ViewContainer parent opposite children
@@ -47,9 +63,7 @@ class ComponentElement extends ViewElement {
 	refers Component component
 }
 
-abstract class TreeNode {
-	String name
-	contains TreeNode[] children
+abstract class TreeNode extends ViewContainer {
 }
 
 class CatalogNode extends TreeNode {	
@@ -57,34 +71,39 @@ class CatalogNode extends TreeNode {
 
 class EObjectNode extends TreeNode {
 	refers EObject eObject
-	refers EObjectView eObjectView
 }
 
-abstract class DecoratedClassView extends ViewContainer {
-	QName name
+class DecoratedView extends ViewContainer {
 	contains Tools tools
 	op Tools generateTools() {tools}
 	contains TreeNode referenceTree	
 	op TreeNode generateReferenceTree() {referenceTree}
 }
 
-class EObjectView extends DecoratedClassView {
-	refers EClass aClass
+class EObjectView extends ViewContainer {
+	refers EObject eObject
 }
 
-class Application extends DecoratedClassView {
+class EClassView extends ViewContainer {
+	refers EClass aClass
 }
 
 class Tools extends ViewContainer {
 }
 
 class Tool extends ViewContainer {
-	String name
 	Caption caption
 	contains Icon icon
 }
 
 class Typography extends ViewElement {
+	Caption text
+}
+
+class Span extends ViewContainer {
+}
+
+class Div extends ViewContainer {
 }
 
 class Row extends ViewContainer {

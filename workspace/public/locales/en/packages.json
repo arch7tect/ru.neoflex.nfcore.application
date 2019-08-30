@@ -176,6 +176,11 @@
                       "caption": "EClass"  
                     },
                 
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
                   "code":
                     {
                       "caption": "Code"  
@@ -211,6 +216,21 @@
                       "caption": "Name"  
                     },
                 
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
                   "references":
                     {
                       "caption": "References"  
@@ -224,6 +244,11 @@
                   "start":
                     {
                       "caption": "Start"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
                     }
                 },
             
@@ -547,6 +572,21 @@
               "caption": "Tree Node",  
               "eStructuralFeatures":
                 {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "name":
                     {
                       "caption": "Name"  
@@ -564,6 +604,21 @@
               "caption": "Catalog Node",  
               "eStructuralFeatures":
                 {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "name":
                     {
                       "caption": "Name"  
@@ -581,6 +636,21 @@
               "caption": "EObject Node",  
               "eStructuralFeatures":
                 {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "name":
                     {
                       "caption": "Name"  
@@ -626,6 +696,11 @@
                   "eClass":
                     {
                       "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
                     }
                 }
             },
@@ -653,6 +728,11 @@
                   "eClass":
                     {
                       "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
                     },
                 
                   "code":
@@ -725,6 +805,11 @@
                       "caption": "EClass"  
                     },
                 
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
                   "code":
                     {
                       "caption": "Code"  
@@ -755,9 +840,29 @@
                       "caption": "Reference Tree"  
                     },
                 
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "aClass":
                     {
                       "caption": "AClass"  
+                    },
+                
+                  "eObject":
+                    {
+                      "caption": "EObject"  
                     }
                 },
             
@@ -810,6 +915,11 @@
                   "parent":
                     {
                       "caption": "Parent"  
+                    },
+                
+                  "text":
+                    {
+                      "caption": "Text"  
                     }
                 }
             },
@@ -903,6 +1013,11 @@
                   "eClass":
                     {
                       "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
                     }
                 }
             },
@@ -1001,6 +1116,198 @@
                   "children":
                     {
                       "caption": "Children"  
+                    }
+                }
+            },
+        
+          "RemoteComponent":
+            {
+              "caption": "Remote Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "path":
+                    {
+                      "caption": "Path"  
+                    },
+                
+                  "componentName":
+                    {
+                      "caption": "Component Name"  
+                    }
+                }
+            },
+        
+          "ViewNode":
+            {
+              "caption": "View Node",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    }
+                }
+            },
+        
+          "DecoratedView":
+            {
+              "caption": "Decorated View",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "tools":
+                    {
+                      "caption": "Tools"  
+                    },
+                
+                  "referenceTree":
+                    {
+                      "caption": "Reference Tree"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "generateTools":
+                    {
+                      "caption": "Generate Tools"  
+                    },
+                
+                  "generateReferenceTree":
+                    {
+                      "caption": "Generate Reference Tree"  
+                    }
+                }
+            },
+        
+          "Span":
+            {
+              "caption": "Span",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                }
+            },
+        
+          "Div":
+            {
+              "caption": "Div",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                }
+            },
+        
+          "DecoratedComponent":
+            {
+              "caption": "Decorated Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    }
+                }
+            },
+        
+          "ClassComponent":
+            {
+              "caption": "Class Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
+                  "orderBy":
+                    {
+                      "caption": "Order By"  
                     }
                 }
             }
