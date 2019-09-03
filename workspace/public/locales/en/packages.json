@@ -4,6 +4,387 @@
       "caption": "Application",  
       "eClasses":
         {
+          "Form":
+            {
+              "caption": "Form",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    }
+                }
+            },
+        
+          "PathContainer":
+            {
+              "caption": "Path Container",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    }
+                }
+            },
+        
+          "PathElement":
+            {
+              "caption": "Path Element",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    }
+                }
+            },
+        
+          "PathRoot":
+            {
+              "caption": "Path Root",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    }
+                }
+            },
+        
+          "EmptyRoot":
+            {
+              "caption": "Empty Root",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    }
+                }
+            },
+        
+          "Application":
+            {
+              "caption": "Application",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "eClass":
+                    {
+                      "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "tools":
+                    {
+                      "caption": "Tools"  
+                    },
+                
+                  "referenceTree":
+                    {
+                      "caption": "Reference Tree"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "references":
+                    {
+                      "caption": "References"  
+                    },
+                
+                  "tools":
+                    {
+                      "caption": "Tools"  
+                    },
+                
+                  "start":
+                    {
+                      "caption": "Start"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "generateTools":
+                    {
+                      "caption": "Generate Tools"  
+                    },
+                
+                  "generateReferenceTree":
+                    {
+                      "caption": "Generate Reference Tree"  
+                    }
+                }
+            },
+        
+          "PathForm":
+            {
+              "caption": "Path Form",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "form":
+                    {
+                      "caption": "Form"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    }
+                }
+            },
+        
+          "RootContainer":
+            {
+              "caption": "Root Container",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    }
+                }
+            },
+        
+          "Icon":
+            {
+              "caption": "Icon",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    }
+                }
+            },
+        
+          "FAIcon":
+            {
+              "caption": "FAIcon",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "iconCode":
+                    {
+                      "caption": "Icon Code"  
+                    }
+                }
+            },
+        
           "Component":
             {
               "caption": "Component",  
@@ -24,6 +405,103 @@
                   "name":
                     {
                       "caption": "Name"  
+                    }
+                }
+            },
+        
+          "Tool":
+            {
+              "caption": "Tool",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "label":
+                    {
+                      "caption": "Label"  
+                    },
+                
+                  "icon":
+                    {
+                      "caption": "Icon"  
+                    },
+                
+                  "component":
+                    {
+                      "caption": "Component"  
+                    },
+                
+                  "caption":
+                    {
+                      "caption": "Caption"  
+                    }
+                }
+            },
+        
+          "ComponentElement":
+            {
+              "caption": "Component Element",  
+              "eStructuralFeatures":
+                {
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "component":
+                    {
+                      "caption": "Component"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
+                    },
+                
+                  "getFullPath":
+                    {
+                      "caption": "Get Full Path"  
                     }
                 }
             },
@@ -67,67 +545,6 @@
                 }
             },
         
-          "Icon":
-            {
-              "caption": "Icon",  
-              "eStructuralFeatures":
-                {
-                  "code":
-                    {
-                      "caption": "Code"  
-                    },
-                
-                  "parent":
-                    {
-                      "caption": "Parent"  
-                    }
-                }
-            },
-        
-          "FAIcon":
-            {
-              "caption": "FAIcon",  
-              "eStructuralFeatures":
-                {
-                  "code":
-                    {
-                      "caption": "Code"  
-                    },
-                
-                  "parent":
-                    {
-                      "caption": "Parent"  
-                    },
-                
-                  "iconCode":
-                    {
-                      "caption": "Icon Code"  
-                    }
-                }
-            },
-        
-          "ComponentElement":
-            {
-              "caption": "Component Element",  
-              "eStructuralFeatures":
-                {
-                  "code":
-                    {
-                      "caption": "Code"  
-                    },
-                
-                  "parent":
-                    {
-                      "caption": "Parent"  
-                    },
-                
-                  "component":
-                    {
-                      "caption": "Component"  
-                    }
-                }
-            },
-        
           "Tree":
             {
               "caption": "Tree",  
@@ -155,6 +572,21 @@
               "caption": "Tree Node",  
               "eStructuralFeatures":
                 {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "name":
                     {
                       "caption": "Name"  
@@ -172,6 +604,21 @@
               "caption": "Catalog Node",  
               "eStructuralFeatures":
                 {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "name":
                     {
                       "caption": "Name"  
@@ -189,6 +636,21 @@
               "caption": "EObject Node",  
               "eStructuralFeatures":
                 {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "name":
                     {
                       "caption": "Name"  
@@ -234,6 +696,11 @@
                   "eClass":
                     {
                       "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
                     }
                 }
             },
@@ -261,6 +728,26 @@
                   "eClass":
                     {
                       "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
                     },
                 
                   "name":
@@ -318,41 +805,11 @@
                       "caption": "EClass"  
                     },
                 
-                  "name":
+                  "aClass":
                     {
-                      "caption": "Name"  
+                      "caption": "AClass"  
                     },
                 
-                  "tools":
-                    {
-                      "caption": "Tools"  
-                    },
-                
-                  "referenceTree":
-                    {
-                      "caption": "Reference Tree"  
-                    }
-                },
-            
-              "eOperations":
-                {
-                  "generateTools":
-                    {
-                      "caption": "Generate Tools"  
-                    },
-                
-                  "generateReferenceTree":
-                    {
-                      "caption": "Generate Reference Tree"  
-                    }
-                }
-            },
-        
-          "Application":
-            {
-              "caption": "Application",  
-              "eStructuralFeatures":
-                {
                   "code":
                     {
                       "caption": "Code"  
@@ -368,11 +825,6 @@
                       "caption": "Children"  
                     },
                 
-                  "eClass":
-                    {
-                      "caption": "EClass"  
-                    },
-                
                   "name":
                     {
                       "caption": "Name"  
@@ -386,6 +838,31 @@
                   "referenceTree":
                     {
                       "caption": "Reference Tree"  
+                    },
+                
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
+                  "eObject":
+                    {
+                      "caption": "EObject"  
                     }
                 },
             
@@ -425,43 +902,6 @@
                 }
             },
         
-          "Tool":
-            {
-              "caption": "Tool",  
-              "eStructuralFeatures":
-                {
-                  "code":
-                    {
-                      "caption": "Code"  
-                    },
-                
-                  "parent":
-                    {
-                      "caption": "Parent"  
-                    },
-                
-                  "children":
-                    {
-                      "caption": "Children"  
-                    },
-                
-                  "name":
-                    {
-                      "caption": "Name"  
-                    },
-                
-                  "caption":
-                    {
-                      "caption": "Caption"  
-                    },
-                
-                  "icon":
-                    {
-                      "caption": "Icon"  
-                    }
-                }
-            },
-        
           "Typography":
             {
               "caption": "Typography",  
@@ -475,6 +915,11 @@
                   "parent":
                     {
                       "caption": "Parent"  
+                    },
+                
+                  "text":
+                    {
+                      "caption": "Text"  
                     }
                 }
             },
@@ -568,6 +1013,11 @@
                   "eClass":
                     {
                       "caption": "EClass"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
                     }
                 }
             },
@@ -592,9 +1042,272 @@
                       "caption": "Children"  
                     },
                 
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
                   "eStructuralFeature":
                     {
                       "caption": "EStructural Feature"  
+                    }
+                }
+            },
+        
+          "NamedView":
+            {
+              "caption": "Named View",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    }
+                }
+            },
+        
+          "DynamicComponent":
+            {
+              "caption": "Dynamic Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "path":
+                    {
+                      "caption": "Path"  
+                    }
+                }
+            },
+        
+          "FormItem":
+            {
+              "caption": "Form Item",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                }
+            },
+        
+          "RemoteComponent":
+            {
+              "caption": "Remote Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "path":
+                    {
+                      "caption": "Path"  
+                    },
+                
+                  "componentName":
+                    {
+                      "caption": "Component Name"  
+                    }
+                }
+            },
+        
+          "ViewNode":
+            {
+              "caption": "View Node",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    }
+                }
+            },
+        
+          "DecoratedView":
+            {
+              "caption": "Decorated View",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    },
+                
+                  "tools":
+                    {
+                      "caption": "Tools"  
+                    },
+                
+                  "referenceTree":
+                    {
+                      "caption": "Reference Tree"  
+                    }
+                },
+            
+              "eOperations":
+                {
+                  "generateTools":
+                    {
+                      "caption": "Generate Tools"  
+                    },
+                
+                  "generateReferenceTree":
+                    {
+                      "caption": "Generate Reference Tree"  
+                    }
+                }
+            },
+        
+          "Span":
+            {
+              "caption": "Span",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                }
+            },
+        
+          "Div":
+            {
+              "caption": "Div",  
+              "eStructuralFeatures":
+                {
+                  "code":
+                    {
+                      "caption": "Code"  
+                    },
+                
+                  "parent":
+                    {
+                      "caption": "Parent"  
+                    },
+                
+                  "children":
+                    {
+                      "caption": "Children"  
+                    }
+                }
+            },
+        
+          "DecoratedComponent":
+            {
+              "caption": "Decorated Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    }
+                }
+            },
+        
+          "ClassComponent":
+            {
+              "caption": "Class Component",  
+              "eStructuralFeatures":
+                {
+                  "name":
+                    {
+                      "caption": "Name"  
+                    },
+                
+                  "view":
+                    {
+                      "caption": "View"  
+                    },
+                
+                  "aClass":
+                    {
+                      "caption": "AClass"  
+                    },
+                
+                  "orderBy":
+                    {
+                      "caption": "Order By"  
                     }
                 }
             }
