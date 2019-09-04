@@ -15,10 +15,11 @@ import org.eclipse.emf.ecore.EStructuralFeature
 /* Components */
 abstract class Component {
     QName name
-}
-
-class NamedView extends Component {	
 	contains ViewElement view
+	contains Tools tools
+	op Tools generateTools() {tools}
+	contains TreeNode referenceTree	
+	op TreeNode generateReferenceTree() {referenceTree}
 }
 
 class StaticComponent extends Component {	
@@ -29,15 +30,10 @@ class RemoteComponent extends Component {
 	String componentName	
 }
 
-
-abstract class DecoratedComponent extends Component {
-	contains DecoratedView view
+class Application extends Component {
 }
 
-class Application extends DecoratedComponent {
-}
-
-class ClassComponent extends DecoratedComponent {
+class ClassComponent extends Component {
 	refers EClass aClass
 	int orderBy
 }
@@ -73,19 +69,8 @@ class EObjectNode extends TreeNode {
 	refers EObject eObject
 }
 
-class DecoratedView extends ViewContainer {
-	contains Tools tools
-	op Tools generateTools() {tools}
-	contains TreeNode referenceTree	
-	op TreeNode generateReferenceTree() {referenceTree}
-}
-
-class EObjectView extends ViewContainer {
-	refers EObject eObject
-}
-
-class EClassView extends ViewContainer {
-	refers EClass aClass
+class ComponentNode extends TreeNode {
+	refers Component component
 }
 
 class Tools extends ViewContainer {
@@ -116,6 +101,10 @@ class Tabs extends ViewContainer {
 }
 
 class Form extends ViewContainer {
+}
+
+class EClassForm extends Form {
+	refers EClass aClass
 }
 
 class FormItem extends ViewContainer {

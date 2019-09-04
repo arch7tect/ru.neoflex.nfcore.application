@@ -32,8 +32,6 @@ class ApplicationInit {
         }
         if (rs.resources.empty) {
             def application = ApplicationFactory.eINSTANCE.createApplication()
-            def decoratedView = ApplicationFactory.eINSTANCE.createDecoratedView()
-            application.setView(decoratedView)
             application.name = name
             def referenceTree = ApplicationFactory.eINSTANCE.createCatalogNode()
             for (i in 1..5) {
@@ -46,10 +44,10 @@ class ApplicationInit {
             def report1 = findOrCreateEObject(ReportsPackage.Literals.REPORT, "report1", true)
             reportNode.setEObject(report1)
             (referenceTree.children[0] as CatalogNode).children.add(reportNode)
-            decoratedView.setReferenceTree(referenceTree)
+            application.setReferenceTree(referenceTree)
             def typography = ApplicationFactory.eINSTANCE.createTypography()
             typography.text = "Hello From Reports!"
-            decoratedView.children.add(typography)
+            application.view = typography
             rs.resources.add(Context.current.store.createEObject(application))
         }
         return rs.resources.get(0).contents.get(0)
