@@ -24,6 +24,7 @@ class LocalesPackageInit {
         }
         Lang.createLangIfNotExists("en")
         Lang.createLangIfNotExists("ru")
+        Lang.createLangIfNotExists("ch")
     }
 
     LocalesPackageInit() {}

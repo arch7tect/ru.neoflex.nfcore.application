@@ -15,5 +15,6 @@
         "action": "行動",
         "edit": "編輯",
         "delete": "刪除",
-        "addresource": "添加資源"
+        "addresource": "添加資源",
+        "dynamiccomponent": " 組件無法加載 "
 }
